@@ -6,168 +6,468 @@
   <title>DJP - Développeur Web Abidjan</title>
   <style>
     :root {
-      --bg-gradient: linear-gradient(to right, #ff7e5f, #feb47f);
+      --bg-gradient: linear-gradient(to right, #ff7e5f, #2a9d8f);
       --card-bg: rgba(255,255,255,0.1);
       --text-color: white;
       --input-bg: rgba(255, 255, 255, 0.2);
     }
-    
-    .dark-mode {
-      --bg-gradient: linear-gradient(to right, #1e1e1e, #2d2d2d);
+
+   .dark-mode {
+      --bg-gradient: linear-gradient(to right, #1e1e1e, #2d3748);
       --card-bg: rgba(0,0,0,0.3);
-      --text-color: #e2e2e2;
+      --text-color: #e2e8f0;
       --input-bg: rgba(0, 0, 0, 0.3);
     }
 
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     body {
       background: var(--bg-gradient);
+      font-family: Arial, sans-serif;
       color: var(--text-color);
-      min-height: 100vh;
-      padding: 40px 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transition: 0.3s ease;
-    }
-
-    .container {
-      max-width: 900px;
-      width: 100%;
-    }
-
-    .header {
       text-align: center;
-      margin-bottom: 50px;
-    }
-
-    .header img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid var(--card-bg);
-      margin-bottom: 20px;
+      padding: 20px;
+      min-height: 100vh;
+      transition: all 0.3s;
     }
 
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-
-    p.subtitle {
-      font-size: 1.2rem;
-      opacity: 0.9;
-    }
-
-    .section {
-      background: var(--card-bg);
-      padding: 30px;
-      border-radius: 15px;
-      margin-bottom: 30px;
-      backdrop-filter: blur(10px);
-    }
-
-    h2 {
-      margin-bottom: 20px;
-      font-size: 1.8rem;
-    }
-
-    .projet {
-      background: var(--card-bg);
-      padding: 20px;
-      border-radius: 10px;
+      font-size: clamp(20px, 6vw, 36px);
       margin-bottom: 15px;
-      transition: transform 0.2s ease;
+      line-height: 1.3;
     }
 
-    .projet:hover {
-      transform: translateY(-5px);
+    p {
+      font-size: clamp(16px, 4vw, 20px);
+      margin-bottom: 15px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .projet h3 {
-      margin-bottom: 10px;
+    img {
+      border: 5px solid white;
+      border-radius: 50%;
+      margin-top: 20px;
+      box-shadow: 0px 0px 20px black;
+      width: 200px;
+      height: 200px;
+      max-width: 60%;
+      object-fit: cover;
     }
 
-    .projet a {
-      color: var(--text-color);
-      text-decoration: underline;
-      font-weight: bold;
-    }
-
-    .btn {
+   .btn-whatsapp {
       display: inline-block;
-      padding: 12px 25px;
-      background: var(--input-bg);
-      border-radius: 8px;
+      background: #25D366;
+      color: white;
+      padding: 15px 30px;
+      margin-top: 25px;
+      border-radius: 50px;
       text-decoration: none;
-      color: var(--text-color);
-      margin-top: 15px;
-      transition: 0.2s ease;
+      font-weight: bold;
+      transition: 0.3s;
     }
 
-    .btn:hover {
-      opacity: 0.8;
+   .btn-whatsapp:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     }
 
-    .toggle-dark {
+   .theme-toggle {
       position: fixed;
       top: 20px;
       right: 20px;
-      padding: 10px 15px;
+      background: var(--card-bg);
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+
+    /* === TO-DO LIST V3 === */
+   .input-section {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+    }
+
+    #champTache, #categorieTache, #dateTache {
+      padding: 12px;
+      font-size: 16px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 8px;
+      background: var(--input-bg);
+      color: var(--text-color);
+    }
+
+    #champTache {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    #champTache::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+   .btn-todo {
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: bold;
       border: none;
       border-radius: 8px;
-      background: var(--card-bg);
-      color: var(--text-color);
       cursor: pointer;
+      background: white;
+      color: #ff7e5f;
+      transition: all 0.3s;
+    }
+
+   .btn-todo:hover {
+      transform: translateY(-2px);
+    }
+
+    #toutSupprimer {
+      background: #ff4444;
+      color: white;
+      width: 100%;
+      margin-top: 15px;
+    }
+
+    #listeTaches {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+      min-height: 50px;
+    }
+
+    #listeTaches li {
+      background: var(--card-bg);
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: grab;
+      transition: all 0.3s;
+      border-left: 4px solid transparent;
+    }
+
+    #listeTaches li:active {
+      cursor: grabbing;
+    }
+
+    #listeTaches li.dragging {
+      opacity: 0.5;
+      background: rgba(255,255,255,0.3);
+    }
+
+    #listeTaches li:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+   .tache-info {
+      flex: 1;
+    }
+
+   .tache-categorie {
+      font-size: 12px;
+      padding: 2px 8px;
+      border-radius: 12px;
+      margin-right: 8px;
+      color: white;
+    }
+
+   .cat-perso { background: #9b59b6; border-left-color: #9b59b6!important; }
+   .cat-boulot { background: #3498db; border-left-color: #3498db!important; }
+   .cat-ifsm { background: #e67e22; border-left-color: #e67e22!important; }
+
+   .tache-date {
+      font-size: 12px;
+      opacity: 0.8;
+      display: block;
+      margin-top: 4px;
+    }
+
+   .en-retard {
+      color: #ff4444;
       font-weight: bold;
     }
+
+   .finie {
+      text-decoration: line-through;
+      opacity: 0.5;
+    }
+
+   .btn-supprimer {
+      background: #ff4444;
+      color: white;
+      padding: 6px 12px;
+      font-size: 14px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+    }
+    /* === FIN TO-DO V3 === */
   </style>
 </head>
 <body>
-  <button class="toggle-dark" onclick="document.body.classList.toggle('dark-mode')">🌙</button>
-  
-  <div class="container">
-    <!-- Header -->
-    <div class="header">
-      <img src="moi.jpg" alt="Photo DJP">
-      <h1>DJP</h1>
-      <p class="subtitle">Développeur Web - Abidjan</p>
-      <a href="https://github.com/jdy12345" target="_blank" class="btn">Mon GitHub</a>
+  <button class="theme-toggle" id="themeToggle">🌙</button>
+
+  <h1>Ravi(e) de vous accueillir sur mon site web</h1>
+  <p>Découvrez mes projets, ma passion et mon amour pour l'informatique.</p>
+  <p>Belle visite à vous.</p>
+  <img src="moi.jpg" alt="c'est moi">
+  <br>
+  <a href="https://wa.me/2250142048659" class="btn-whatsapp" target="_blank">
+    Contactez-moi sur WhatsApp
+  </a>
+
+  <!-- A PROPOS -->
+  <section style="margin-top: 60px; padding: 25px 20px; background: var(--card-bg); border-radius: 15px; max-width: 600px; margin-left: auto; margin-right: auto;">
+    <h2 style="font-size: clamp(18px, 5vw, 28px); margin-bottom: 15px;">Qui suis-je?</h2>
+    <p style="font-size: 16px; line-height: 1.6;">
+Bonjour! Je m'appelle DJIGUEMDE JEAN YVES. Je suis développeur web débutant, actuellement en 1ère année IDA à IFSM ANGRÉ (Abidjan). Je me forme intensivement sur HTML, CSS et JavaScript pour concevoir des sites modernes, fluides et totalement responsives. Mon objectif? Transformer vos idées en sites web qui claquent et qui font la différence. Toujours prêt à apprendre et à relever de nouveaux défis. Connectons-nous! #DéveloppeurWeb #Abidjan #JavaScript #WebDesign #IFSM </p>
+  </section>
+
+  <!-- PROJETS -->
+  <section style="margin-top: 30px; padding: 25px 20px; max-width: 600px; margin-left: auto; margin-right: auto;">
+    <h2 style="font-size: clamp(18px, 5vw, 28px); margin-bottom: 20px;">Mes projets</h2>
+
+    <div style="background: var(--card-bg); padding: 20px; border-radius: 10px; text-align: left; margin-bottom: 20px;">
+      <h3 style="margin-bottom: 8px;">Portfolio DJP</h3>
+      <p style="font-size: 15px; margin-bottom: 12px;">Mon premier site en HTML/CSS, hébergé sur Netlify.</p>
+      <a href="https://github.com/jdy12345/portfolio-djp" target="_blank" style="color: #ffd700; font-weight: bold;">Voir le code source →</a>
     </div>
 
-    <!-- À propos -->
-    <div class="section">
-      <h2>À propos</h2>
-      <p>Passionné par le développement web, je crée des sites modernes, rapides et responsive. 
-      Spécialisé en HTML, CSS et JavaScript, je transforme tes idées en site concret.</p>
-    </div>
-
-    <!-- Projets -->
-    <div class="section">
-      <h2>Mes Projets</h2>
-      
-      <div class="projet">
-        <h3>Site Vitrine Boulangerie</h3>
-        <p>Site one-page responsive avec menu, horaires et formulaire de contact. 
-        Design moderne et optimisé mobile.</p>
-        <a href="https://github.com/jdy12345" target="_blank">Voir le code</a>
+    <!-- TO-DO LIST V3 -->
+    <div style="background: var(--card-bg); padding: 20px; border-radius: 12px; text-align: left;">
+      <h3 style="margin-bottom: 15px;">To-Do List V3 🚀</h3>
+      <div class="input-section">
+        <input type="text" id="champTache" placeholder="Écris une tâche...">
+        <select id="categorieTache">
+          <option value="perso">Perso</option>
+          <option value="boulot">Boulot</option>
+          <option value="ifsm">IFSM</option>
+        </select>
+        <input type="date" id="dateTache">
+        <button class="btn-todo" id="btnAjouter">Ajouter</button>
       </div>
-
+      <ul id="listeTaches"></ul>
+      <button class="btn-todo" id="toutSupprimer">Tout supprimer</button>
     </div>
+  </section>
 
-    <!-- Contact -->
-    <div class="section">
-      <h2>Contact</h2>
-      <p>Tu veux qu'on bosse ensemble ? Contacte-moi sur GitHub ou LinkedIn.</p>
+  <!-- COMPETENCES -->
+  <section style="margin-top: 40px; padding: 25px 20px; max-width: 600px; margin-left: auto; margin-right: auto;">
+    <h2 style="font-size: clamp(18px, 5vw, 24px); margin-bottom: 20px;">Mes Compétences</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+      <span style="background: var(--card-bg); padding: 8px 16px; border-radius: 20px; font-size: 14px;">HTML5</span>
+      <span style="background: var(--card-bg); padding: 8px 16px; border-radius: 20px; font-size: 14px;">CSS3</span>
+      <span style="background: var(--card-bg); padding: 8px 16px; border-radius: 20px; font-size: 14px;">JavaScript</span>
+      <span style="background: var(--card-bg); padding: 8px 16px; border-radius: 20px; font-size: 14px;">localStorage</span>
+      <span style="background: var(--card-bg); padding: 8px 16px; border-radius: 20px; font-size: 14px;">Drag & Drop API</span>
+      <span style="background: var(--card-bg); padding: 8px 16px; border-radius: 20px; font-size: 14px;">GitHub</span>
+      <span style="background: var(--card-bg); padding: 8px 16px; border-radius: 20px; font-size: 14px;">Netlify</span>
     </div>
-  </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section style="margin: 40px auto; padding: 25px 20px; max-width: 600px; background: var(--card-bg); border-radius: 10px;">
+    <h2 style="font-size: clamp(18px, 5vw, 24px); margin-bottom: 20px;">Me Contacter</h2>
+    <p style="margin-bottom: 15px;">Tu veux collaborer ou discuter d'un projet?</p>
+    <a href="mailto:morienpola@gmail.com" style="display: inline-block; background: #ffd700; color: #0f172a; padding: 12px 24px; border-radius: 8px; font-weight: bold; text-decoration: none;">
+      M'envoyer un email
+    </a>
+  </section>
+
+  <footer style="margin-top: 50px; padding: 20px; font-size: 14px; opacity: 0.7;">
+    © 2026 DJP - Développé à Abidjan 🇨🇮<br>
+    En mémoire de Papa - 27-09-2025 🕊️
+  </footer>
+
+  <!-- === SCRIPT TO-DO V3 + FIX THEME === -->
+  <script>
+    const champTache = document.getElementById('champTache');
+    const categorieTache = document.getElementById('categorieTache');
+    const dateTache = document.getElementById('dateTache');
+    const btnAjouter = document.getElementById('btnAjouter');
+    const listeTaches = document.getElementById('listeTaches');
+    const btnToutSupprimer = document.getElementById('toutSupprimer');
+    const themeToggle = document.getElementById('themeToggle');
+
+    // === FIX THEME ===
+    function appliquerTheme() {
+      if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+        themeToggle.textContent = '☀️';
+      } else {
+        document.body.classList.remove('dark-mode');
+        themeToggle.textContent = '🌙';
+      }
+    }
+
+    appliquerTheme();
+
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const isDark = document.body.classList.contains('dark-mode');
+      themeToggle.textContent = isDark? '☀️' : '🌙';
+      localStorage.setItem('theme', isDark? 'dark' : 'light');
+    });
+    // === FIN FIX THEME ===
+
+    chargerTaches();
+
+    btnAjouter.addEventListener('click', ajouterTache);
+    champTache.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') ajouterTache();
+    });
+
+    btnToutSupprimer.addEventListener('click', function() {
+      if (confirm('Tu veux vraiment tout supprimer?')) {
+        listeTaches.innerHTML = '';
+        localStorage.removeItem('mesTachesV3');
+      }
+    });
+
+    function ajouterTache() {
+      const texte = champTache.value.trim();
+      if (texte === '') {
+        alert('Écris quelque chose avant!');
+        return;
+      }
+      const categorie = categorieTache.value;
+      const date = dateTache.value;
+      creerElementTache(texte, categorie, date, false);
+      champTache.value = '';
+      dateTache.value = '';
+      sauvegarderTaches();
+    }
+
+    function creerElementTache(texte, categorie, date, estFinie) {
+      const li = document.createElement('li');
+      li.draggable = true;
+      li.classList.add(`cat-${categorie}`);
+
+      const tacheInfo = document.createElement('div');
+      tacheInfo.className = 'tache-info';
+
+      const spanCategorie = document.createElement('span');
+      spanCategorie.className = 'tache-categorie';
+      spanCategorie.textContent = categorie.toUpperCase();
+
+      const spanTexte = document.createElement('span');
+      spanTexte.textContent = texte;
+
+      tacheInfo.appendChild(spanCategorie);
+      tacheInfo.appendChild(spanTexte);
+
+      if (date) {
+        const spanDate = document.createElement('span');
+        spanDate.className = 'tache-date';
+        const dateObj = new Date(date + 'T00:00:00');
+        const aujourdhui = new Date();
+        aujourdhui.setHours(0,0,0,0);
+        spanDate.textContent = `📅 ${dateObj.toLocaleDateString('fr-FR')}`;
+        if (dateObj < aujourdhui &&!estFinie) {
+          spanDate.classList.add('en-retard');
+          spanDate.textContent += ' - En retard!';
+        }
+        tacheInfo.appendChild(spanDate);
+      }
+
+      li.appendChild(tacheInfo);
+
+      if (estFinie) li.classList.add('finie');
+
+      li.addEventListener('click', function(e) {
+        if (e.target.tagName!== 'BUTTON') {
+          li.classList.toggle('finie');
+          sauvegarderTaches();
+        }
+      });
+
+      // Drag & Drop
+      li.addEventListener('dragstart', () => li.classList.add('dragging'));
+      li.addEventListener('dragend', () => {
+        li.classList.remove('dragging');
+        sauvegarderTaches();
+      });
+
+      const btnSupprimer = document.createElement('button');
+      btnSupprimer.textContent = 'X';
+      btnSupprimer.className = 'btn-supprimer';
+      btnSupprimer.addEventListener('click', function() {
+        li.remove();
+        sauvegarderTaches();
+      });
+
+      li.appendChild(btnSupprimer);
+      listeTaches.appendChild(li);
+    }
+
+    // Drag & Drop sur la liste
+    listeTaches.addEventListener('dragover', e => {
+      e.preventDefault();
+      const dragging = document.querySelector('.dragging');
+      const afterElement = getDragAfterElement(listeTaches, e.clientY);
+      if (afterElement == null) {
+        listeTaches.appendChild(dragging);
+      } else {
+        listeTaches.insertBefore(dragging, afterElement);
+      }
+    });
+
+    function getDragAfterElement(container, y) {
+      const draggableElements = [...container.querySelectorAll('li:not(.dragging)')];
+      return draggableElements.reduce((closest, child) => {
+        const box = child.getBoundingClientRect();
+        const offset = y - box.top - box.height / 2;
+        if (offset < 0 && offset > closest.offset) {
+          return { offset: offset, element: child };
+        } else {
+          return closest;
+        }
+      }, { offset: Number.NEGATIVE_INFINITY }).element;
+    }
+
+    function sauvegarderTaches() {
+      const taches = [];
+      document.querySelectorAll('#listeTaches li').forEach(li => {
+        const texte = li.querySelector('.tache-info').childNodes[1].textContent;
+        const categorie = li.className.match(/cat-(\w+)/)[1];
+        const dateEl = li.querySelector('.tache-date');
+        let date = '';
+        if (dateEl) {
+          const match = dateEl.textContent.match(/📅 (\d{2}\/\d{2}\/\d{4})/);
+          if (match) {
+            date = match[1].split('/').reverse().join('-');
+          }
+        }
+        const estFinie = li.classList.contains('finie');
+        taches.push({ texte, categorie, date, finie: estFinie });
+      });
+      localStorage.setItem('mesTachesV3', JSON.stringify(taches));
+    }
+
+    function chargerTaches() {
+      const tachesSauvegardees = JSON.parse(localStorage.getItem('mesTachesV3'));
+      if (tachesSauvegardees) {
+        tachesSauvegardees.forEach(tache => {
+          creerElementTache(tache.texte, tache.categorie, tache.date, tache.finie);
+        });
+      }
+    }
+  </script>
 
 </body>
 </html>
