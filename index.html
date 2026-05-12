@@ -12,7 +12,7 @@
       --input-bg: rgba(255, 255, 255, 0.2);
     }
 
-.dark-mode {
+   .dark-mode {
       --bg-gradient: linear-gradient(to right, #1e1e1e, #2d3748);
       --card-bg: rgba(0,0,0,0.3);
       --text-color: #e2e8f0;
@@ -60,7 +60,7 @@
       object-fit: cover;
     }
 
-.btn-whatsapp {
+   .btn-whatsapp {
       display: inline-block;
       background: #25D366;
       color: white;
@@ -72,12 +72,12 @@
       transition: 0.3s;
     }
 
-.btn-whatsapp:hover {
+   .btn-whatsapp:hover {
       transform: scale(1.05);
       box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     }
 
-.theme-toggle {
+   .theme-toggle {
       position: fixed;
       top: 20px;
       right: 20px;
@@ -92,8 +92,8 @@
       z-index: 1000;
     }
 
-    /* === TO-DO LIST V4.2 === */
-.input-section {
+    /* === TO-DO LIST V3 === */
+   .input-section {
       display: flex;
       gap: 10px;
       margin-bottom: 15px;
@@ -118,7 +118,7 @@
       color: rgba(255, 255, 255, 0.7);
     }
 
-.btn-todo {
+   .btn-todo {
       padding: 12px 24px;
       font-size: 16px;
       font-weight: bold;
@@ -130,95 +130,15 @@
       transition: all 0.3s;
     }
 
-.btn-todo:hover {
+   .btn-todo:hover {
       transform: translateY(-2px);
     }
 
     #toutSupprimer {
       background: #ff4444;
       color: white;
-      width: 48%;
-      margin-top: 15px;
-    }
-
-    /* === EXPORT V4.2 === */
-    #btnExporter {
-      background: #3498db;
-      color: white;
-      width: 48%;
-      margin-top: 15px;
-      margin-left: 4%;
-    }
-
-.actions-bottom {
-      display: flex;
-      justify-content: space-between;
-    }
-    /* === FIN EXPORT V4.2 === */
-
-.stats-container {
-      background: rgba(0,0,0,0.2);
-      padding: 15px;
-      border-radius: 8px;
-      margin-bottom: 15px;
-      text-align: left;
-    }
-
-.stats-texte {
-      font-size: 14px;
-      margin-bottom: 8px;
-      font-weight: bold;
-    }
-
-.progress-bar-bg {
       width: 100%;
-      height: 8px;
-      background: rgba(255,255,255,0.2);
-      border-radius: 4px;
-      overflow: hidden;
-    }
-
-.progress-bar-fill {
-      height: 100%;
-      background: #25D366;
-      width: 0%;
-      transition: width 0.3s ease;
-      border-radius: 4px;
-    }
-
-.filtres-container {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 15px;
-      flex-wrap: wrap;
-    }
-
-.btn-filtre {
-      flex: 1;
-      min-width: 70px;
-      padding: 8px 12px;
-      font-size: 14px;
-      font-weight: bold;
-      border: 2px solid rgba(255,255,255,0.3);
-      border-radius: 20px;
-      cursor: pointer;
-      background: transparent;
-      color: var(--text-color);
-      transition: all 0.2s;
-    }
-
-.btn-filtre:hover {
-      background: rgba(255,255,255,0.2);
-    }
-
-.btn-filtre.actif {
-      background: white;
-      color: #ff7e5f;
-      border-color: white;
-    }
-
-.tache-cachee {
-      display: none!important;
+      margin-top: 15px;
     }
 
     #listeTaches {
@@ -254,11 +174,11 @@
       background: rgba(255, 255, 255, 0.2);
     }
 
-.tache-info {
+   .tache-info {
       flex: 1;
     }
 
-.tache-categorie {
+   .tache-categorie {
       font-size: 12px;
       padding: 2px 8px;
       border-radius: 12px;
@@ -266,28 +186,28 @@
       color: white;
     }
 
-.cat-perso { background: #9b59b6; border-left-color: #9b59b6!important; }
-.cat-boulot { background: #3498db; border-left-color: #3498db!important; }
-.cat-ifsm { background: #e67e22; border-left-color: #e67e22!important; }
+   .cat-perso { background: #9b59b6; border-left-color: #9b59b6!important; }
+   .cat-boulot { background: #3498db; border-left-color: #3498db!important; }
+   .cat-ifsm { background: #e67e22; border-left-color: #e67e22!important; }
 
-.tache-date {
+   .tache-date {
       font-size: 12px;
       opacity: 0.8;
       display: block;
       margin-top: 4px;
     }
 
-.en-retard {
+   .en-retard {
       color: #ff4444;
       font-weight: bold;
     }
 
-.finie {
+   .finie {
       text-decoration: line-through;
       opacity: 0.5;
     }
 
-.btn-supprimer {
+   .btn-supprimer {
       background: #ff4444;
       color: white;
       padding: 6px 12px;
@@ -296,7 +216,7 @@
       border: none;
       cursor: pointer;
     }
-    /* === FIN TO-DO V4.2 === */
+    /* === FIN TO-DO V3 === */
   </style>
 </head>
 <body>
@@ -328,26 +248,9 @@ Bonjour! Je m'appelle DJIGUEMDE JEAN YVES. Je suis développeur web débutant, a
       <a href="https://github.com/jdy12345/portfolio-djp" target="_blank" style="color: #ffd700; font-weight: bold;">Voir le code source →</a>
     </div>
 
-    <!-- TO-DO LIST V4.2 -->
+    <!-- TO-DO LIST V3 -->
     <div style="background: var(--card-bg); padding: 20px; border-radius: 12px; text-align: left;">
-      <h3 style="margin-bottom: 15px;">To-Do List V4.2 🚀</h3>
-
-      <!-- STATS V4 -->
-      <div class="stats-container">
-        <div class="stats-texte" id="statsTexte">0/0 tâches finies</div>
-        <div class="progress-bar-bg">
-          <div class="progress-bar-fill" id="progressBar"></div>
-        </div>
-      </div>
-
-      <!-- FILTRES V4.1 -->
-      <div class="filtres-container">
-        <button class="btn-filtre actif" data-filtre="tout">Tout</button>
-        <button class="btn-filtre" data-filtre="perso">Perso</button>
-        <button class="btn-filtre" data-filtre="boulot">Boulot</button>
-        <button class="btn-filtre" data-filtre="ifsm">IFSM</button>
-      </div>
-
+      <h3 style="margin-bottom: 15px;">To-Do List V3 🚀</h3>
       <div class="input-section">
         <input type="text" id="champTache" placeholder="Écris une tâche...">
         <select id="categorieTache">
@@ -359,10 +262,7 @@ Bonjour! Je m'appelle DJIGUEMDE JEAN YVES. Je suis développeur web débutant, a
         <button class="btn-todo" id="btnAjouter">Ajouter</button>
       </div>
       <ul id="listeTaches"></ul>
-      <div class="actions-bottom">
-        <button class="btn-todo" id="toutSupprimer">Tout supprimer</button>
-        <button class="btn-todo" id="btnExporter">Exporter.txt</button>
-      </div>
+      <button class="btn-todo" id="toutSupprimer">Tout supprimer</button>
     </div>
   </section>
 
@@ -391,17 +291,22 @@ Bonjour! Je m'appelle DJIGUEMDE JEAN YVES. Je suis développeur web débutant, a
 
   <footer style="margin-top: 50px; padding: 20px; font-size: 14px; opacity: 0.7;">
     © 2026 DJP - Développé à Abidjan 🇨🇮<br>
-   « En hommage à mon Papa, dont les valeurs continuent de me guider chaque jour. » - 27-09-2025 🕊️
+    En mémoire de Papa - 27-09-2025 🕊️
   </footer>
 
-  <!-- === SCRIPT V4.2 - EXPORT === -->
+  <!-- === SCRIPT TO-DO V3 + FIX THEME === -->
   <script>
-    // === THEME ===
+    const champTache = document.getElementById('champTache');
+    const categorieTache = document.getElementById('categorieTache');
+    const dateTache = document.getElementById('dateTache');
+    const btnAjouter = document.getElementById('btnAjouter');
+    const listeTaches = document.getElementById('listeTaches');
+    const btnToutSupprimer = document.getElementById('toutSupprimer');
     const themeToggle = document.getElementById('themeToggle');
 
+    // === FIX THEME ===
     function appliquerTheme() {
-      const themeSauvegarde = localStorage.getItem('theme');
-      if (themeSauvegarde === 'dark') {
+      if (localStorage.getItem('theme') === 'dark') {
         document.body.classList.add('dark-mode');
         themeToggle.textContent = '☀️';
       } else {
@@ -418,23 +323,9 @@ Bonjour! Je m'appelle DJIGUEMDE JEAN YVES. Je suis développeur web débutant, a
       themeToggle.textContent = isDark? '☀️' : '🌙';
       localStorage.setItem('theme', isDark? 'dark' : 'light');
     });
-
-    // === TO-DO LIST V4.2 ===
-    const champTache = document.getElementById('champTache');
-    const categorieTache = document.getElementById('categorieTache');
-    const dateTache = document.getElementById('dateTache');
-    const btnAjouter = document.getElementById('btnAjouter');
-    const listeTaches = document.getElementById('listeTaches');
-    const btnToutSupprimer = document.getElementById('toutSupprimer');
-    const statsTexte = document.getElementById('statsTexte');
-    const progressBar = document.getElementById('progressBar');
-    const btnsFiltre = document.querySelectorAll('.btn-filtre');
-    const btnExporter = document.getElementById('btnExporter');
-
-    let filtreActuel = 'tout';
+    // === FIN FIX THEME ===
 
     chargerTaches();
-    mettreAJourStats();
 
     btnAjouter.addEventListener('click', ajouterTache);
     champTache.addEventListener('keypress', function(e) {
@@ -444,78 +335,9 @@ Bonjour! Je m'appelle DJIGUEMDE JEAN YVES. Je suis développeur web débutant, a
     btnToutSupprimer.addEventListener('click', function() {
       if (confirm('Tu veux vraiment tout supprimer?')) {
         listeTaches.innerHTML = '';
-        localStorage.removeItem('mesTachesV4');
-        mettreAJourStats();
+        localStorage.removeItem('mesTachesV3');
       }
     });
-
-    // === FILTRES V4.1 ===
-    btnsFiltre.forEach(btn => {
-      btn.addEventListener('click', () => {
-        btnsFiltre.forEach(b => b.classList.remove('actif'));
-        btn.classList.add('actif');
-        filtreActuel = btn.dataset.filtre;
-        appliquerFiltre();
-        mettreAJourStats();
-      });
-    });
-
-    function appliquerFiltre() {
-      const toutesLesTaches = document.querySelectorAll('#listeTaches li');
-      toutesLesTaches.forEach(li => {
-        if (filtreActuel === 'tout') {
-          li.classList.remove('tache-cachee');
-        } else {
-          if (li.classList.contains(`cat-${filtreActuel}`)) {
-            li.classList.remove('tache-cachee');
-          } else {
-            li.classList.add('tache-cachee');
-          }
-        }
-      });
-    }
-
-    // === EXPORT V4.2 ===
-    btnExporter.addEventListener('click', exporterTaches);
-
-    function exporterTaches() {
-      const taches = [];
-      let texteFinal = "=== MES TÂCHES DJP ===\n";
-      texteFinal += `Exporté le ${new Date().toLocaleDateString('fr-FR')}\n\n`;
-
-      document.querySelectorAll('#listeTaches li').forEach(li => {
-        const texte = li.querySelector('.tache-info').childNodes[1].textContent;
-        const categorie = li.className.match(/cat-(\w+)/)[1].toUpperCase();
-        const estFinie = li.classList.contains('finie');
-        const dateEl = li.querySelector('.tache-date');
-        let dateTxt = '';
-
-        if (dateEl) {
-          dateTxt = ` - ${dateEl.textContent}`;
-        }
-
-        const coche = estFinie? '[x]' : '[ ]';
-        taches.push(`${coche} ${categorie} - ${texte}${dateTxt}`);
-      });
-
-      if (taches.length === 0) {
-        texteFinal += "Aucune tâche pour le moment.\n";
-      } else {
-        texteFinal += taches.join('\n');
-      }
-
-      const stats = statsTexte.textContent;
-      texteFinal += `\n\nStats : ${stats}`;
-
-      const blob = new Blob([texteFinal], { type: 'text/plain' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'mes-taches-djp.txt';
-      a.click();
-      URL.revokeObjectURL(url);
-    }
-    // === FIN EXPORT V4.2 ===
 
     function ajouterTache() {
       const texte = champTache.value.trim();
@@ -529,8 +351,6 @@ Bonjour! Je m'appelle DJIGUEMDE JEAN YVES. Je suis développeur web débutant, a
       champTache.value = '';
       dateTache.value = '';
       sauvegarderTaches();
-      appliquerFiltre();
-      mettreAJourStats();
     }
 
     function creerElementTache(texte, categorie, date, estFinie) {
@@ -573,10 +393,10 @@ Bonjour! Je m'appelle DJIGUEMDE JEAN YVES. Je suis développeur web débutant, a
         if (e.target.tagName!== 'BUTTON') {
           li.classList.toggle('finie');
           sauvegarderTaches();
-          mettreAJourStats();
         }
       });
 
+      // Drag & Drop
       li.addEventListener('dragstart', () => li.classList.add('dragging'));
       li.addEventListener('dragend', () => {
         li.classList.remove('dragging');
@@ -589,13 +409,13 @@ Bonjour! Je m'appelle DJIGUEMDE JEAN YVES. Je suis développeur web débutant, a
       btnSupprimer.addEventListener('click', function() {
         li.remove();
         sauvegarderTaches();
-        mettreAJourStats();
       });
 
       li.appendChild(btnSupprimer);
       listeTaches.appendChild(li);
     }
 
+    // Drag & Drop sur la liste
     listeTaches.addEventListener('dragover', e => {
       e.preventDefault();
       const dragging = document.querySelector('.dragging');
@@ -636,37 +456,15 @@ Bonjour! Je m'appelle DJIGUEMDE JEAN YVES. Je suis développeur web débutant, a
         const estFinie = li.classList.contains('finie');
         taches.push({ texte, categorie, date, finie: estFinie });
       });
-      localStorage.setItem('mesTachesV4', JSON.stringify(taches));
+      localStorage.setItem('mesTachesV3', JSON.stringify(taches));
     }
 
     function chargerTaches() {
-      const tachesSauvegardees = JSON.parse(localStorage.getItem('mesTachesV4'));
+      const tachesSauvegardees = JSON.parse(localStorage.getItem('mesTachesV3'));
       if (tachesSauvegardees) {
         tachesSauvegardees.forEach(tache => {
           creerElementTache(tache.texte, tache.categorie, tache.date, tache.finie);
         });
-      }
-      appliquerFiltre();
-    }
-
-    function mettreAJourStats() {
-      const toutesLesTaches = document.querySelectorAll('#listeTaches li:not(.tache-cachee)');
-      const tachesFinies = document.querySelectorAll('#listeTaches li:not(.tache-cachee).finie');
-
-      const total = toutesLesTaches.length;
-      const finies = tachesFinies.length;
-      const pourcentage = total === 0? 0 : Math.round((finies / total) * 100);
-
-      if (filtreActuel === 'tout') {
-        statsTexte.textContent = `${finies}/${total} tâches finies`;
-      } else {
-        statsTexte.textContent = `${finies}/${total} tâches ${filtreActuel.toUpperCase()} finies`;
-      }
-
-      progressBar.style.width = pourcentage + '%';
-
-      if (pourcentage === 100 && total > 0) {
-        statsTexte.textContent += ' 🎉';
       }
     }
   </script>
